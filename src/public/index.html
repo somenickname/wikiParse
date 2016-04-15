@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>My App</title>
+
+    <!--<script data-main="./js/app" src="js/libs/require.js"></script>-->
+    <!--<script src="js/libs/require.js"></script>-->
+    <script src="js/libs/angular.js"></script>
+    <script src="js/libs/angular-resource.js"></script>
+    <script src="js/libs/angular-sanitize.js"></script>
+    <script src="js/main.js"></script>
+</head>
+<body>
+<div ng-controller="myCtrl">
+    <h1>Wiki parse</h1>
+    <input ng-model="message" type="text">
+    <button ng-click="search(message)" type="submit">Search</button>
+    <div ng-bind-html="content">
+
+    </div>
+</div>
+</body>
+</html>
