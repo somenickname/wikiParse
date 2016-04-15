@@ -1,24 +1,43 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="myApp">
+<html lang="en" ng-app="myApp" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>My App</title>
 
-    <!--<script data-main="./js/app" src="js/libs/require.js"></script>-->
-    <!--<script src="js/libs/require.js"></script>-->
     <script src="js/libs/angular.js"></script>
     <script src="js/libs/angular-resource.js"></script>
     <script src="js/libs/angular-sanitize.js"></script>
     <script src="js/main.js"></script>
 </head>
 <body>
-<div ng-controller="myCtrl">
-    <h1>Wiki parse</h1>
-    <input ng-model="message" type="text">
-    <button ng-click="search(message)" type="submit">Search</button>
-    <div ng-bind-html="content">
-
+<div class="container">
+    <div ng-controller="myCtrl">
+        <h1>Wiki parse</h1>
+        <form class="form-inline" role="form">
+            <div class="form-group">
+                <label for="searchField">Search: </label>
+                <input id="searchField" type="text" class="form-control" ng-model="message">
+            </div>
+            <button type="button" class="btn btn-primary"
+                    ng-click="search(message)">Search
+                <i class="glyphicon glyphicon-search" style="vertical-align: middle;"></i>
+            </button>
+        </form>
+        <p>
+        <div ng-bind-html="content"></div>
+        </p>
     </div>
 </div>
 </body>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+      integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
+      integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+<script src="js/libs/jquery.min.js"></script>
+<script src="js/libs/bootstrap.min.js"></script>
+
 </html>
